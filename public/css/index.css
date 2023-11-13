@@ -1,0 +1,276 @@
+/* --------------- REUSABLE STYLES --------------- */
+@import url('https://fonts.googleapis.com/css?family=Montserrat Alternates');
+
+:root {
+    --body-color: #F2F4F3;
+    --primary-color: #0092E0;
+    --secondary-color: #0077B8;
+    --tertiary-color: #ADE2FF;
+    --text-color: #2E4057;
+    --red-color: #DC3545;
+    --translucent-tertiary-color: rgba(173, 226, 255, 0.5);
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    height: calc(100% - 4rem);
+}
+
+.body-bg {
+    background-color: var(--body-color);
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.currSign:before {
+    content: '₱ ';
+}
+/* SIDEBAR */
+.sidebar {
+    position: fixed;
+    width: 14rem;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: white;
+    justify-content: space-between;
+    overflow-x: hidden;
+    padding: 0.5rem !important;
+}
+
+.sidebar .image-text img {
+    width: 2rem;
+    margin: 0.75rem;
+}
+
+.sidebar header .image-text {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.sidebar .text {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-left: 0.5rem;
+    font-family: 'Montserrat Alternates';
+}
+
+
+.sidebar a {
+    color: var(--text-color);
+}
+
+.sidebar a:hover {
+    cursor: pointer;
+    color: var(--text-color);
+    background-color: var(--tertiary-color);
+}
+
+.sidebar .icon {
+    font-size: 1.5rem;
+}
+
+.sidebar .menu-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+/* TOP NAVIGATION BAR */
+.top-bar {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 4rem;
+    top: 0;
+    background-color: rgb(255, 255, 255);
+    border-left: 2px solid var(--body-color);
+    border-bottom: 2px solid var(--body-color);
+    padding: 1rem 15rem 1rem 1rem;
+}
+
+.top-bar .toggle {
+    font-size: 1.75rem;
+    color: var(--text-color);
+    padding: 0.25rem;
+}
+
+.top-bar .toggle:hover {
+    cursor: pointer;
+    background-color: var(--tertiary-color);
+    border-radius: 5px;
+}
+
+.top-bar .profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-bar .profile span {
+    font-size: 1rem;
+    text-overflow: ellipsis;
+}
+
+.top-bar .logo {
+    display: none;
+}
+
+.top-bar .logo img {
+    width: 2rem;
+}
+
+.top-bar .logo span {
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Montserrat Alternates';
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* MAIN */
+main {
+    margin-top: 4rem;
+    margin-left: 14rem;
+    padding: 0;
+    height: 100%;
+}
+
+.button-gap {
+    gap: 1rem;
+}
+
+
+.container-profile {
+    background-color: white;
+    padding: 2rem;
+}
+
+.container-profile img {
+    margin-right: 1rem;
+}
+
+
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.container-rounded {
+    background-color: var(--tertiary-color);
+    color: var(--text-color);
+    padding: 0.3rem 1rem;
+    border-radius: 10px;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.container-rounded h3 {
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* MODALS */
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.modal-buttons button {
+    width: 10rem;
+}
+
+.modal-body i {
+    font-size: 4rem;
+}
+
+#logout-i {
+    color: black;
+}
+
+#save-i {
+    color: green;
+}
+
+#delete-i {
+    color: var(--red-color);
+}
+
+/* PATH */
+.custom-path {
+    display: flex;
+    list-style: none;
+}
+
+.custom-path li a {
+    text-decoration: none;
+    padding-right: 5px;
+    color: var(--text-color);
+}
+
+.custom-path li a:hover {
+    color: var(--primary-color);
+}
+
+.custom-path li::before {
+    content: "›";
+    margin-right: 5px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    #collapsibleNavbar {
+        overflow-x: hidden;
+        display: none;
+    }
+
+    .menu {
+        padding-top: 4rem;
+    }
+
+    .menu-bar {
+        padding: 4rem 0;
+    }
+
+    .sidebar a {
+        margin: 0 2rem;
+    }
+
+    .sidebar header {
+        display: none;
+    }
+
+    .top-bar {
+        padding-right: 1rem;
+    }
+
+    .top-bar .logo {
+        display: block;
+    }
+
+    .top-bar #topbar-name {
+        display: none;
+    }
+
+    .member-total {
+        flex-direction: column;
+    }
+
+    main {
+        margin-left: 0;
+        width: 100%;
+    }
+}
